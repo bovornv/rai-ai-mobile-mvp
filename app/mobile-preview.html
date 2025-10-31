@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไร่ AI - Mobile Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #F6F8FA;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .header {
+            background-color: #15803D;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .app-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .weather-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .weather-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .weather-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-left: 8px;
+        }
+        
+        .weather-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .temperature {
+            font-size: 32px;
+            font-weight: bold;
+            color: #15803D;
+            margin-right: 12px;
+        }
+        
+        .weather-desc {
+            font-size: 16px;
+            color: #63738A;
+        }
+        
+        .weather-details {
+            font-size: 14px;
+            color: #63738A;
+        }
+        
+        .spray-card {
+            background: #E7F8EE;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .spray-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .spray-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-left: 8px;
+            flex: 1;
+        }
+        
+        .good-badge {
+            background: #16A34A;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .spray-reason {
+            font-size: 14px;
+            color: #0B1320;
+            margin-bottom: 4px;
+        }
+        
+        .spray-time {
+            font-size: 12px;
+            color: #15803D;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-bottom: 12px;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .price-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .price-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-left: 8px;
+        }
+        
+        .price-info {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 4px;
+        }
+        
+        .price-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #15803D;
+            margin-right: 8px;
+        }
+        
+        .price-unit {
+            font-size: 14px;
+            color: #63738A;
+        }
+        
+        .price-source {
+            font-size: 12px;
+            color: #63738A;
+        }
+        
+        .action-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .action-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0B1320;
+            margin-left: 12px;
+        }
+        
+        .weather-section {
+            margin-bottom: 20px;
+        }
+        
+        .current-weather {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .weather-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .location-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .location-text {
+            font-size: 14px;
+            color: #0B1320;
+            margin-left: 4px;
+            font-weight: 500;
+        }
+        
+        .last-updated {
+            font-size: 12px;
+            color: #63738A;
+        }
+        
+        .weather-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .temperature-section {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .current-temp {
+            font-size: 48px;
+            font-weight: bold;
+            color: #0B1320;
+        }
+        
+        .temp-unit {
+            font-size: 24px;
+            color: #63738A;
+            margin-top: 8px;
+        }
+        
+        .weather-icon-section {
+            text-align: center;
+        }
+        
+        .weather-description {
+            font-size: 16px;
+            color: #0B1320;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        
+        .weather-details {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .weather-detail-item {
+            text-align: center;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: #63738A;
+            margin-top: 4px;
+        }
+        
+        .detail-value {
+            font-size: 14px;
+            color: #0B1320;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        
+        .forecast-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-bottom: 16px;
+        }
+        
+        .forecast-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .forecast-day {
+            width: 80px;
+        }
+        
+        .forecast-day-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #0B1320;
+        }
+        
+        .forecast-date-text {
+            font-size: 12px;
+            color: #63738A;
+            margin-top: 2px;
+        }
+        
+        .forecast-icon {
+            width: 40px;
+            text-align: center;
+            margin: 0 12px;
+        }
+        
+        .forecast-condition {
+            flex: 1;
+            margin-left: 8px;
+        }
+        
+        .forecast-condition-text {
+            font-size: 14px;
+            color: #0B1320;
+            margin-bottom: 4px;
+        }
+        
+        .rain-chance-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .rain-chance-text {
+            font-size: 12px;
+            color: #3B82F6;
+            margin-left: 4px;
+            font-weight: 500;
+        }
+        
+        .forecast-temps {
+            text-align: right;
+            width: 60px;
+        }
+        
+        .forecast-high-temp {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0B1320;
+        }
+        
+        .forecast-low-temp {
+            font-size: 14px;
+            color: #63738A;
+            margin-top: 2px;
+        }
+        
+        .alert-card {
+            background: #FEF2F2;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-left: 4px solid #EF4444;
+        }
+        
+        .alert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .alert-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-left: 8px;
+        }
+        
+        .alert-text {
+            font-size: 12px;
+            color: #0B1320;
+            margin-bottom: 4px;
+            line-height: 18px;
+        }
+        
+        .weather-tips-card {
+            background: #FFFBEB;
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .profile-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: #15803D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-bottom: 4px;
+        }
+        
+        .profile-email {
+            font-size: 14px;
+            color: #63738A;
+        }
+        
+        .edit-profile-button {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: #F6F8FA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #15803D;
+        }
+        
+        .settings-section {
+            margin-bottom: 24px;
+        }
+        
+        .settings-section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0B1320;
+            margin-bottom: 12px;
+            margin-left: 4px;
+        }
+        
+        .setting-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .setting-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .setting-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #E7F8EE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: #15803D;
+        }
+        
+        .setting-info {
+            flex: 1;
+        }
+        
+        .setting-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0B1320;
+            margin-bottom: 2px;
+        }
+        
+        .setting-description {
+            font-size: 12px;
+            color: #63738A;
+            line-height: 16px;
+        }
+        
+        .language-chips {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .language-chip {
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #F6F8FA;
+            border: 1px solid #E5E7EB;
+            font-size: 12px;
+            font-weight: 500;
+            color: #63738A;
+        }
+        
+        .language-chip.active {
+            background: #15803D;
+            border-color: #15803D;
+            color: white;
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .toggle {
+            width: 44px;
+            height: 24px;
+            border-radius: 12px;
+            background: #E5E7EB;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .toggle.active {
+            background: #15803D;
+        }
+        
+        .toggle-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: white;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .action-button {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #63738A;
+        }
+        
+        .logout-button {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            border: 1px solid #FEE2E2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .logout-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #EF4444;
+            margin-left: 8px;
+        }
+        
+        .bottom-nav {
+            display: flex;
+            background: white;
+            padding: 8px 4px;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 0 2px;
+        }
+        
+        .nav-item.active {
+            background: #15803D;
+            color: white;
+        }
+        
+        .nav-text {
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        
+        .nav-item.active .nav-text {
+            color: white;
+        }
+        
+        .icon {
+            font-size: 24px;
+        }
+        
+        .nav-item.active .icon {
+            color: white;
+        }
+        
+        .nav-item:not(.active) .icon {
+            color: #15803D;
+        }
+        
+        .nav-item:not(.active) .nav-text {
+            color: #15803D;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="app-name">ไร่ AI</div>
+            <div class="subtitle">Rai AI Mobile App</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Weather Summary -->
+            <div class="weather-card">
+                <div class="weather-header">
+                    <span class="icon">☀️</span>
+                    <div class="weather-title">สภาพอากาศวันนี้</div>
+                </div>
+                <div class="weather-info">
+                    <div class="temperature">32°C</div>
+                    <div class="weather-desc">มีเมฆบางส่วน</div>
+                </div>
+                <div class="weather-details">ความชื้น 65% • ลม 8 km/h</div>
+            </div>
+
+            <!-- Spray Window -->
+            <div class="spray-card">
+                <div class="spray-header">
+                    <span class="icon">🌱</span>
+                    <div class="spray-title">ช่วงเวลาพ่นยา</div>
+                    <div class="good-badge">ดี</div>
+                </div>
+                <div class="spray-reason">สภาพอากาศเหมาะสมสำหรับการพ่นยา</div>
+                <div class="spray-time">แนะนำ: 06:00-08:00 น.</div>
+            </div>
+
+            <!-- Price Section -->
+            <div>
+                <div class="section-title">ราคาพืชผลวันนี้</div>
+                
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="icon">🌾</span>
+                        <div class="price-title">ข้าว</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-value">12,500</div>
+                        <div class="price-unit">บาท/ตัน</div>
+                    </div>
+                    <div class="price-source">ที่มา: กรมการค้าภายใน</div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="icon">🥭</span>
+                        <div class="price-title">ทุเรียน</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-value">85</div>
+                        <div class="price-unit">บาท/กก.</div>
+                    </div>
+                    <div class="price-source">ที่มา: กรมการค้าภายใน</div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div>
+                <div class="section-title">การดำเนินการด่วน</div>
+                
+                <div class="action-card">
+                    <span class="icon">📷</span>
+                    <div class="action-text">สแกนโรคพืช</div>
+                </div>
+
+                <div class="action-card">
+                    <span class="icon">🌱</span>
+                    <div class="action-text">จัดการไร่นา</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <div class="icon">🏠</div>
+                <div class="nav-text">หน้าแรก</div>
+            </div>
+            <div class="nav-item">
+                <div class="icon">📷</div>
+                <div class="nav-text">สแกน</div>
+            </div>
+            <div class="nav-item">
+                <div class="icon">🌱</div>
+                <div class="nav-text">ไร่นา</div>
+            </div>
+            <div class="nav-item">
+                <div class="icon">☀️</div>
+                <div class="nav-text">อากาศ</div>
+            </div>
+            <div class="nav-item">
+                <div class="icon">⚙️</div>
+                <div class="nav-text">ตั้งค่า</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

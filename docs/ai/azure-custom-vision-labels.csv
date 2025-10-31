@@ -1,0 +1,10 @@
+﻿label,crop,th_name,en_name,tip_th,tip_en,class_type
+rice_brown_spot,rice,ใบจุดสีน้ำตาล,Rice Brown Spot,ฉีดเช้า ลมอ่อน • เลี่ยงฝน 12 ชม.,"Spray morning, calm wind • Avoid rain 12h",disease
+rice_leaf_blast,rice,โรคไหม้ใบ,Rice Leaf Blast,ลดไนโตรเจน • ใช้สารกลุ่ม Triazole,Reduce nitrogen • Use Triazole,disease
+rice_n_deficiency,rice,ขาดไนโตรเจน,Nitrogen Deficiency,เติมยูเรีย 46-0-0 เบา ๆ • แบ่งใส่,Add Urea 46-0-0 lightly • Split dose,deficiency
+rice_potassium_def,rice,ขาดโพแทสเซียม,Potassium Deficiency,ใส่ 0-0-60 เล็กน้อย • เสริมความแข็งแรงต้น,Add 0-0-60 lightly • Strengthen stalks,deficiency
+rice_healthy,rice,ปกติ/สุขภาพดี,Healthy,เฝ้าดูอาการต่อเนื่อง,Keep monitoring,healthy
+durian_anthracnose,durian,แอนแทรคโนส,Anthracnose,ตัดใบเสีย • ใช้ทองแดง • เลี่ยงฝน,Prune leaves • Use copper • Avoid rain,disease
+durian_n_deficiency,durian,ขาดไนโตรเจน,Nitrogen Deficiency,เติม 15-15-15 เบา ๆ • รักษาความชื้น,Add 15-15-15 lightly • Maintain soil moisture,deficiency
+durian_mealybug,durian,เพลี้ยแป้งทุเรียน,Durian Mealybug,ตัดส่วนที่ระบาด • ชีวภัณฑ์/น้ำสบู่ • ฉีดตามฉลาก,Prune infested parts • Biocontrol/soap • Spray per label,pest
+durian_healthy,durian,ปกติ/สุขภาพดี,Healthy,เฝ้าดูอาการต่อเนื่อง,Keep monitoring,healthy

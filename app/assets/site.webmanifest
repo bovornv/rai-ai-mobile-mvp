@@ -1,0 +1,25 @@
+{
+  "name": "Rai AI Mobile",
+  "short_name": "Rai AI",
+  "description": "AI-powered farming assistant for Thai farmers",
+  "icons": [
+    {
+      "src": "/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4ade80",
+  "background_color": "#0d9488",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "th",
+  "categories": ["agriculture", "productivity", "utilities"]
+}

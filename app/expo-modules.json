@@ -1,0 +1,30 @@
+{
+  "modules": [
+    "@expo/vector-icons",
+    "@react-native-async-storage/async-storage",
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/native",
+    "expo",
+    "expo-camera",
+    "expo-dev-client",
+    "expo-file-system",
+    "expo-font",
+    "expo-image-manipulator",
+    "expo-linear-gradient",
+    "expo-location",
+    "expo-splash-screen",
+    "expo-status-bar",
+    "i18next",
+    "react",
+    "react-dom",
+    "react-i18next",
+    "react-native",
+    "react-native-paper",
+    "react-native-web"
+  ],
+  "exclude": [
+    "react-native-webview",
+    "react-native-safe-area-context",
+    "react-native-screens"
+  ]
+}

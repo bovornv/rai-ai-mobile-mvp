@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "ไร่ AI",
+    "slug": "rai-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#15803D"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rai-ai.mobile",
+      "icon": "./assets/icon.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#15803D"
+      },
+      "icon": "./assets/icon.png",
+      "package": "com.raiai.mobile",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+  "plugins": [
+    "expo-font",
+    "expo-camera",
+    "expo-image-picker",
+    "expo-location"
+  ],
+    "extra": {
+      "eas": {
+        "projectId": "346073a5-dcc0-4af2-84c0-1d4a14737a97"
+      }
+    },
+    "owner": "aurasea"
+  }
+}

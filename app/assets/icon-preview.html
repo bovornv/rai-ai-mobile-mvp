@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rai AI App Icon Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #15803D;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .preview-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .icon-preview {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin: 0 auto 10px;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .icon-adaptive {
+            background: #15803D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Noto Sans Thai', Arial, sans-serif;
+        }
+        .icon-regular {
+            background: #15803D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Noto Sans Thai', Arial, sans-serif;
+        }
+        .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .android-shapes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        .shape {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: #15803D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Noto Sans Thai', Arial, sans-serif;
+            position: relative;
+        }
+        .shape::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 22px;
+            background: linear-gradient(45deg, #15803D, #22c55e);
+            z-index: -1;
+        }
+        .note {
+            background: #fff4e6;
+            border: 1px solid #ffd54f;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        .steps {
+            background: #f8f9fa;
+            border-left: 4px solid #15803D;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .steps h3 {
+            margin-top: 0;
+            color: #15803D;
+        }
+        .steps ol {
+            margin: 10px 0;
+        }
+        .steps li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Rai AI App Icon Preview</h1>
+        
+        <div class="preview-section">
+            <h2>How your app icon will appear on Android:</h2>
+            
+            <div class="android-shapes">
+                <div class="icon-preview">
+                    <div class="shape">ไร่</div>
+                    <div class="label">Standard Icon</div>
+                </div>
+                <div class="icon-preview">
+                    <div class="shape">ไร่</div>
+                    <div class="label">Adaptive Icon</div>
+                </div>
+                <div class="icon-preview">
+                    <div class="shape">ไร่</div>
+                    <div class="label">Rounded Square</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>📝 Note:</strong> The actual icon will use your PNG image with the Thai character "ไร่" on a green background (#15803D). This preview shows the approximate appearance.
+        </div>
+
+        <div class="steps">
+            <h3>🔧 If icon doesn't update after APK install:</h3>
+            <ol>
+                <li><strong>Restart your Android device</strong> - This clears the launcher cache</li>
+                <li><strong>Clear launcher cache:</strong> Settings → Apps → [Your Launcher] → Storage → Clear Cache</li>
+                <li><strong>Uninstall and reinstall:</strong> Remove the app completely, restart, then reinstall</li>
+                <li><strong>Check launcher settings:</strong> Some launchers have icon cache settings</li>
+            </ol>
+        </div>
+
+        <div class="preview-section">
+            <h2>📋 Icon Specifications:</h2>
+            <ul>
+                <li><strong>Size:</strong> 1024×1024 pixels</li>
+                <li><strong>Format:</strong> PNG with transparency</li>
+                <li><strong>Background:</strong> Green (#15803D)</li>
+                <li><strong>Text:</strong> Thai character "ไร่" in white</li>
+                <li><strong>Safe Zone:</strong> Central 66% (675×675px) to prevent cropping</li>
+            </ul>
+        </div>
+
+        <div class="preview-section">
+            <h2>🎯 Expected Result:</h2>
+            <p>After installing the APK, you should see a green square icon with the white Thai character "ไร่" in the center. The icon will have rounded corners and may appear slightly different depending on your Android launcher (some add shadows, others use different shapes).</p>
+        </div>
+    </div>
+</body>
+</html>
