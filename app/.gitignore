@@ -36,6 +36,7 @@ yarn-error.*
 .env.local
 .env.production
 src/config/apiKeys.ts
+src/config/apiKeys.js
 
 # IDE
 .vscode/
